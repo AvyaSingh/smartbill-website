@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#86efac"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="32" y="32" width="448" height="448" rx="96" fill="url(#bg)"/>
+
+  <path d="M170 120h150l52 52v220H170z" fill="white"/>
+  <path d="M320 120v52h52" fill="#dbeafe"/>
+
+  <text x="255" y="220"
+        text-anchor="middle"
+        font-size="72"
+        font-weight="700"
+        fill="#2563eb">₹</text>
+
+  <rect x="210" y="290" width="28" height="60" rx="4" fill="url(#chart)"/>
+  <rect x="252" y="260" width="28" height="90" rx="4" fill="url(#chart)"/>
+  <rect x="294" y="225" width="28" height="125" rx="4" fill="url(#chart)"/>
+
+  <path d="M120 320C170 400 340 400 400 250"
+        fill="none"
+        stroke="#06b6d4"
+        stroke-width="24"
+        stroke-linecap="round"/>
+</svg>
