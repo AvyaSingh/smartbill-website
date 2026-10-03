@@ -106,9 +106,9 @@ function Pricing() {
 }
 
 function Contact() {
- const emailEnquiryEnabled = String(import.meta.env.ENQUIRY_EMAIL_ENABLED ?? '').trim().toLowerCase() === 'true'
- const whatsappNumber = (import.meta.env.WHATSAPP_NUMBER || '').replace(/\D/g, '')
- const whatsappEnquiryEnabled = String(import.meta.env.ENQUIRY_WHATSAPP_ENABLED ?? '').trim().toLowerCase() === 'true' && Boolean(whatsappNumber)
+ const emailEnquiryEnabled = String(__ENQUIRY_EMAIL_ENABLED__ ?? '').trim().toLowerCase() === 'true'
+ const whatsappNumber = (__WHATSAPP_NUMBER__ || '').replace(/\D/g, '')
+ const whatsappEnquiryEnabled = String(__ENQUIRY_WHATSAPP_ENABLED__ ?? '').trim().toLowerCase() === 'true' && Boolean(whatsappNumber)
  const [sendState, setSendState] = useState({ status: 'idle', message: '' })
  const [fields, setFields] = useState({ name: '', email: '', phone: '', organization: '', product: 'SmartBilling ERP', message: '', website: '' })
  const update = (e) => setFields({ ...fields, [e.target.name]: e.target.value })
@@ -123,7 +123,7 @@ function Contact() {
    }
    setSendState({ status: 'sending', message: 'Sending your enquiry…' })
    try {
-     const baseUrl = (import.meta.env.API_BASE_URL || (import.meta.env.PROD ? 'https://smartbill-be.onrender.com' : '')).replace(/\/$/, '')
+     const baseUrl = (__API_BASE_URL__ || (import.meta.env.PROD ? 'https://smartbill-be.onrender.com' : '')).replace(/\/$/, '')
      const response = await fetch(`${baseUrl}/api/v1/public/enquiries`, {
        method: 'POST',
        headers: { 'Content-Type': 'application/json' },
